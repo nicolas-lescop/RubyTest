@@ -1,0 +1,39 @@
+// Specific CSS for your home-page
+
+.invoice-title h2, .invoice-title h3 {
+    display: inline-block;
+}
+
+.table > tbody > tr > .no-line {
+    border-top: none;
+}
+
+.table > thead > tr > .no-line {
+    border-bottom: none;
+}
+
+.table > tbody > tr > .thick-line {
+    border-top: 2px solid;
+}
+
+.table > tbody > tr > .thick-line.total {
+    border-top: 4px solid rgb(47, 195, 47);
+}
+
+.green {
+    color: rgb(47, 195, 47);
+}
+
+.blue {
+    color: rgb(68, 68, 219);
+}
+
+.form-container {
+    margin-top: 25px;
+}
+
+#contract_monthly_rent {
+    margin: 0 auto;
+    width: 400px;
+    margin-right: 15px;
+}

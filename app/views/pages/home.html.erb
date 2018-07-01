@@ -1,0 +1,40 @@
+<div class="container">
+<% if user_signed_in? %>
+
+  <div class="form-container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><strong>Invoice Generator</strong></h3>
+        </div>
+        <div class="panel-body">
+          <%= form_tag('/', method: 'get', remote: true, class: 'form-inline') do %>
+            <div class="form-group form-inline text-center">
+            <%= label_tag(:contract_monthly_rent, '') %>
+            <%= text_field_tag(
+              :contract_monthly_rent, '',
+              autofocus: true, placeholder: "Monthly rent including charges: #{@invoice[:contract_monthly_rent]}", class: 'form-control'
+            ) %>
+            <%= submit_tag("Generate", class: 'btn btn-success') %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+  <div class="invoice-container">
+    <%= render 'invoices/invoice' %>
+  </div>
+  
+
+<% else %>
+
+  <h2 class="text-center">Welcome</h2>
+
+  <%= link_to 'Log in', new_user_session_path %>
+
+<% end %>
+</div>

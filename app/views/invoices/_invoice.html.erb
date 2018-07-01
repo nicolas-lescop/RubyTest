@@ -1,0 +1,92 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><strong>Garantme Invoice</strong></h3>
+      </div>
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table class="table table-condensed">
+            <thead>
+              <tr>
+                <td><strong>Designation</strong></td>
+                <td class="text-center"><strong>Price excl VAT</strong></td>
+                <td class="text-center"><strong>VAT</strong></td>
+                <td class="text-right"><strong>Price incl VAT</strong></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Insurance Premium</td>
+                <td class="text-center">
+                  <%= number_with_precision(@invoice[:insurance_premium], :precision => 2) %>
+                </td>
+                <td class="text-center">0.00</td>
+                <td class="text-right">
+                  <%= number_with_precision(@invoice[:insurance_premium], :precision => 2) %>
+                </td>
+              </tr>
+              <tr>
+                <td>Broker Fee</td>
+                <td class="text-center">
+                  <%= number_with_precision(@invoice[:broker_fee], :precision => 2) %>
+                </td>
+                <td class="text-center">0.00</td>
+                <td class="text-right">
+                  <%= number_with_precision(@invoice[:broker_fee], :precision => 2) %>
+                </td>
+              </tr>
+              <tr>
+                <td>Service Fee</td>
+                <td class="text-center">
+                  <%= number_with_precision(@invoice[:services][:ht], :precision => 2) %>
+                </td>
+                <td class="text-center">
+                  <%= number_with_precision(@invoice[:services][:vat], :precision => 2) %>
+                </td>
+                <td class="text-right">
+                  <%= number_with_precision(@invoice[:services][:ttc], :precision => 2) %>
+                </td>
+              </tr>
+              <tr>
+                <td class="thick-line"><strong>Sub-total</strong></td>
+                <td class="thick-line text-center">
+                  <%= number_with_precision(@invoice[:sub_total][:ht], :precision => 2) %>
+                </td>
+                <td class="thick-line text-center">
+                  <%= number_with_precision(@invoice[:sub_total][:vat], :precision => 2) %>
+                </td>
+                <td class="thick-line text-right">
+                  <%= number_with_precision(@invoice[:sub_total][:ttc], :precision => 2) %>
+                </td>
+              </tr>
+              <tr>
+                <td class="blue">Discount</td>
+                <td class="text-center">
+                  <%= number_with_precision(@invoice[:discount][:ht], :precision => 2) %>
+                </td>
+                <td class="text-center">
+                  <%= number_with_precision(@invoice[:discount][:vat], :precision => 2) %>
+                </td>
+                <td class="text-right blue">
+                  <%= number_with_precision(@invoice[:discount][:ttc], :precision => 2) %>
+                </td>
+              </tr>
+              <tr>
+                <td class="thick-line total green"><strong>Total</strong></td>
+                <td class="thick-line total text-center">
+                  <%= number_with_precision(@invoice[:total][:ht], :precision => 2) %>
+                </td>
+                <td class="thick-line total text-center">
+                  <%= number_with_precision(@invoice[:total][:vat], :precision => 2) %></td>
+                <td class="thick-line total text-right green"><strong>
+                  <%= number_with_precision(@invoice[:total][:ttc], :precision => 2) %>
+                </strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

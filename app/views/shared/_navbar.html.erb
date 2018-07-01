@@ -1,0 +1,19 @@
+<div class="navbar-wagon">
+  <!-- Logo -->
+  <%= link_to root_path, class: "navbar-wagon-brand" do %>
+    <%= image_tag "logo.png", height: 150 %>
+  <% end %>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+    <% if user_signed_in? %>
+    <!-- Logout link (when logged in) -->
+      <%= link_to "Logout", main_app.destroy_user_session_path, method: :delete, :class => 'navbar-wagon-item navbar-wagon-link'  %>
+    <% else %>
+      <!-- Login link (when logged out) -->
+      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <% end %>
+  </div>
+</div>
+

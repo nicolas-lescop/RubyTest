@@ -1,0 +1,10 @@
+
+(function(document) {
+  var invoiceContainer = document.querySelector('.invoice-container');
+  invoiceContainer.innerHTML = '<%= j render "invoices/invoice" %>';
+  var contractMonthlyRent = document.querySelector('#contract_monthly_rent');
+  contractMonthlyRent.value = '';
+  contractMonthlyRent.placeholder = 'Monthly rent including charges: ' + <%= @invoice[:contract_monthly_rent] %>;
+}(document));
+
+
