@@ -13,8 +13,7 @@ class PagesController < ApplicationController
   DEFAULT_MONTHLY_RATE = 1000
   
   def home
-    contract_monthly_rent = params[:contract_monthly_rent].to_f
-    @invoice = invoice_generator contract_monthly_rent
+    @invoice = invoice_generator params[:contract_monthly_rent].to_f
 
     respond_to do |format|
       format.html
